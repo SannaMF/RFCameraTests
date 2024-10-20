@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-10-20T17:59:47.163214" rpa="false" schemaversion="5">
+<suite id="s1" name="CameraTests" source="C:\Users\sanna\GITtihommat\RFCameraTests\Tests\CameraTests.robot">
+<test id="s1-t1" name="Test Camera Framerate minimum value and Exposure time maximum values" line="10">
+<kw name="Create Camera" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.230276" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.231276" level="INFO">${SETFRAMERATE} = 1.0</msg>
+<var>${SETFRAMERATE}</var>
+<arg>1</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.231276" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Framerate" owner="CameraLibrary">
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.231276" elapsed="0.007000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.238276" level="INFO">${SETEXPOSURETIME} = 30.0</msg>
+<var>${SETEXPOSURETIME}</var>
+<arg>30</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.238276" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.238276" level="INFO">${setexptime} = True</msg>
+<var>${setexptime}</var>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.238276" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.239277" level="INFO">${SETWIDTH} = 600.0</msg>
+<var>${SETWIDTH}</var>
+<arg>600</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.238276" elapsed="0.001001"/>
+</kw>
+<kw name="Set Camera Width" owner="CameraLibrary">
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.239277" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.239277" level="INFO">${SETHEIGHT} = 111.0</msg>
+<var>${SETHEIGHT}</var>
+<arg>111</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.239277" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Height" owner="CameraLibrary">
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.239277" elapsed="0.000000"/>
+</kw>
+<kw name="Camera Start" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.239277" elapsed="0.000999"/>
+</kw>
+<kw name="Check is camera started" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.240751" level="INFO">${is_camera_started} = True</msg>
+<var>${is_camera_started}</var>
+<status status="PASS" start="2024-10-20T17:59:47.240751" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_camera_started}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.241256" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.240751" elapsed="0.000505"/>
+</kw>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.241481" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A0784D0&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.241481" elapsed="0.000000"/>
+</kw>
+<kw name="Check framerate" owner="BasicFunctionality">
+<kw name="Get Camera Framerate" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.241985" level="INFO">${returned_framerate} = 1.0</msg>
+<var>${returned_framerate}</var>
+<status status="PASS" start="2024-10-20T17:59:47.241481" elapsed="0.000504"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETFRAMERATE}</arg>
+<arg>${returned_framerate}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.241985" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED FRAMERATE: ${returned_framerate}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.241985" elapsed="0.000359"/>
+</kw>
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.241481" elapsed="0.000863"/>
+</kw>
+<kw name="Check exposuretime" owner="BasicFunctionality">
+<kw name="Get Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.242344" level="INFO">${returned_exptime} = 30.0</msg>
+<var>${returned_exptime}</var>
+<status status="PASS" start="2024-10-20T17:59:47.242344" elapsed="0.000515"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETEXPOSURETIME}</arg>
+<arg>${returned_exptime}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.242859" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED EXPTIME: ${returned_exptime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.242859" elapsed="0.000264"/>
+</kw>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.242344" elapsed="0.000779"/>
+</kw>
+<kw name="Check height" owner="BasicFunctionality">
+<kw name="Get Camera Height" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.243123" level="INFO">${returned_height} = 111</msg>
+<var>${returned_height}</var>
+<status status="PASS" start="2024-10-20T17:59:47.243123" elapsed="0.000511"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.243634" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETHEIGHT}</arg>
+<arg>${returned_height}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.243634" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED HEIGHT: ${returned_height}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.243634" elapsed="0.000272"/>
+</kw>
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.243123" elapsed="0.000783"/>
+</kw>
+<kw name="Check width" owner="BasicFunctionality">
+<kw name="Get Camera Width" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.243906" level="INFO">${returned_width} = 600</msg>
+<var>${returned_width}</var>
+<status status="PASS" start="2024-10-20T17:59:47.243906" elapsed="0.000511"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.244417" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETWIDTH}</arg>
+<arg>${returned_width}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.244417" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED WIDTH: ${returned_width}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.244417" elapsed="0.000274"/>
+</kw>
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.243906" elapsed="0.000785"/>
+</kw>
+<kw name="Camera Stop" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.244691" elapsed="0.000502"/>
+</kw>
+<kw name="Check is camera stopped" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.245193" level="INFO">${is_camera_stopped} = False</msg>
+<var>${is_camera_stopped}</var>
+<status status="PASS" start="2024-10-20T17:59:47.245193" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${is_camera_stopped}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.245193" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.245193" elapsed="0.000000"/>
+</kw>
+<doc>Test and validate framerate minimum value and exposure time maximum values</doc>
+<status status="PASS" start="2024-10-20T17:59:47.230276" elapsed="0.014917"/>
+</test>
+<test id="s1-t2" name="Test Camera Framerate maximum value and Exposure time minimum values" line="41">
+<kw name="Create Camera" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.246197" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.246197" level="INFO">${SETFRAMERATE} = 50.0</msg>
+<var>${SETFRAMERATE}</var>
+<arg>50.0</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.246197" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Framerate" owner="CameraLibrary">
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.246197" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.246197" level="INFO">${SETEXPOSURETIME} = 0.1</msg>
+<var>${SETEXPOSURETIME}</var>
+<arg>0.1</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.246197" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.247196" level="INFO">${setexptime} = True</msg>
+<var>${setexptime}</var>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.247196" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.247196" level="INFO">${SETWIDTH} = 260.0</msg>
+<var>${SETWIDTH}</var>
+<arg>260</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.247196" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Width" owner="CameraLibrary">
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.247196" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.247196" level="INFO">${SETHEIGHT} = 520.0</msg>
+<var>${SETHEIGHT}</var>
+<arg>520</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.247196" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Height" owner="CameraLibrary">
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.247196" elapsed="0.000000"/>
+</kw>
+<kw name="Camera Start" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.247196" elapsed="0.000000"/>
+</kw>
+<kw name="Check is camera started" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.248344" level="INFO">${is_camera_started} = True</msg>
+<var>${is_camera_started}</var>
+<status status="PASS" start="2024-10-20T17:59:47.248344" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_camera_started}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.248344" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.248344" elapsed="0.000000"/>
+</kw>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.248857" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A07B170&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.248857" elapsed="0.000000"/>
+</kw>
+<kw name="Check framerate" owner="BasicFunctionality">
+<kw name="Get Camera Framerate" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.248857" level="INFO">${returned_framerate} = 50.0</msg>
+<var>${returned_framerate}</var>
+<status status="PASS" start="2024-10-20T17:59:47.248857" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETFRAMERATE}</arg>
+<arg>${returned_framerate}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.248857" elapsed="0.000545"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED FRAMERATE: ${returned_framerate}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.249402" elapsed="0.000148"/>
+</kw>
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.248857" elapsed="0.000693"/>
+</kw>
+<kw name="Check exposuretime" owner="BasicFunctionality">
+<kw name="Get Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.249550" level="INFO">${returned_exptime} = 0.1</msg>
+<var>${returned_exptime}</var>
+<status status="PASS" start="2024-10-20T17:59:47.249550" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETEXPOSURETIME}</arg>
+<arg>${returned_exptime}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.249550" elapsed="0.000510"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED EXPTIME: ${returned_exptime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.250060" elapsed="0.000128"/>
+</kw>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.249550" elapsed="0.000638"/>
+</kw>
+<kw name="Check height" owner="BasicFunctionality">
+<kw name="Get Camera Height" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.250188" level="INFO">${returned_height} = 520</msg>
+<var>${returned_height}</var>
+<status status="PASS" start="2024-10-20T17:59:47.250188" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.250188" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETHEIGHT}</arg>
+<arg>${returned_height}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.250188" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED HEIGHT: ${returned_height}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.250698" elapsed="0.000135"/>
+</kw>
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.250188" elapsed="0.000645"/>
+</kw>
+<kw name="Check width" owner="BasicFunctionality">
+<kw name="Get Camera Width" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.250833" level="INFO">${returned_width} = 260</msg>
+<var>${returned_width}</var>
+<status status="PASS" start="2024-10-20T17:59:47.250833" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.251335" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETWIDTH}</arg>
+<arg>${returned_width}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.250833" elapsed="0.000502"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED WIDTH: ${returned_width}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.251335" elapsed="0.000150"/>
+</kw>
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.250833" elapsed="0.000652"/>
+</kw>
+<kw name="Camera Stop" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.251485" elapsed="0.000510"/>
+</kw>
+<kw name="Check is camera stopped" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.251995" level="INFO">${is_camera_stopped} = False</msg>
+<var>${is_camera_stopped}</var>
+<status status="PASS" start="2024-10-20T17:59:47.251995" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${is_camera_stopped}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.251995" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.251995" elapsed="0.000000"/>
+</kw>
+<doc>Test and validate framerate maximum value and exposure time minimum values</doc>
+<status status="PASS" start="2024-10-20T17:59:47.246197" elapsed="0.005798"/>
+</test>
+<test id="s1-t3" name="Test width and height maximum values" line="73">
+<kw name="Create Camera" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.253003" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.253003" level="INFO">${SETFRAMERATE} = 14.0</msg>
+<var>${SETFRAMERATE}</var>
+<arg>14.0</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.253003" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Framerate" owner="CameraLibrary">
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.253003" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.253003" level="INFO">${SETEXPOSURETIME} = 6.0</msg>
+<var>${SETEXPOSURETIME}</var>
+<arg>6</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.253003" elapsed="0.001000"/>
+</kw>
+<kw name="Set Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.254003" level="INFO">${setexptime} = True</msg>
+<var>${setexptime}</var>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.254003" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.254003" level="INFO">${SETWIDTH} = 1000.0</msg>
+<var>${SETWIDTH}</var>
+<arg>1000</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.254003" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Width" owner="CameraLibrary">
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.254003" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.254003" level="INFO">${SETHEIGHT} = 1000.0</msg>
+<var>${SETHEIGHT}</var>
+<arg>1000</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.254003" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Height" owner="CameraLibrary">
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.254003" elapsed="0.000000"/>
+</kw>
+<kw name="Camera Start" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.255003" elapsed="0.000000"/>
+</kw>
+<kw name="Check is camera started" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.255003" level="INFO">${is_camera_started} = True</msg>
+<var>${is_camera_started}</var>
+<status status="PASS" start="2024-10-20T17:59:47.255003" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_camera_started}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.255003" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.255003" elapsed="0.000000"/>
+</kw>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.255828" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A07B2F0&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.255828" elapsed="0.000000"/>
+</kw>
+<kw name="Check framerate" owner="BasicFunctionality">
+<kw name="Get Camera Framerate" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.256331" level="INFO">${returned_framerate} = 14.0</msg>
+<var>${returned_framerate}</var>
+<status status="PASS" start="2024-10-20T17:59:47.256331" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETFRAMERATE}</arg>
+<arg>${returned_framerate}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.256331" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED FRAMERATE: ${returned_framerate}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.256331" elapsed="0.000403"/>
+</kw>
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.255828" elapsed="0.000906"/>
+</kw>
+<kw name="Check exposuretime" owner="BasicFunctionality">
+<kw name="Get Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.256734" level="INFO">${returned_exptime} = 6.0</msg>
+<var>${returned_exptime}</var>
+<status status="PASS" start="2024-10-20T17:59:47.256734" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETEXPOSURETIME}</arg>
+<arg>${returned_exptime}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.256734" elapsed="0.000511"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED EXPTIME: ${returned_exptime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.257245" elapsed="0.000189"/>
+</kw>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.256734" elapsed="0.000700"/>
+</kw>
+<kw name="Check height" owner="BasicFunctionality">
+<kw name="Get Camera Height" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.257434" level="INFO">${returned_height} = 1000</msg>
+<var>${returned_height}</var>
+<status status="PASS" start="2024-10-20T17:59:47.257434" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.257434" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETHEIGHT}</arg>
+<arg>${returned_height}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.257434" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED HEIGHT: ${returned_height}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.257946" elapsed="0.000106"/>
+</kw>
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.257434" elapsed="0.000618"/>
+</kw>
+<kw name="Check width" owner="BasicFunctionality">
+<kw name="Get Camera Width" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.258052" level="INFO">${returned_width} = 1000</msg>
+<var>${returned_width}</var>
+<status status="PASS" start="2024-10-20T17:59:47.258052" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.258052" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETWIDTH}</arg>
+<arg>${returned_width}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.258052" elapsed="0.000510"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED WIDTH: ${returned_width}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.258562" elapsed="0.000165"/>
+</kw>
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.258052" elapsed="0.000675"/>
+</kw>
+<kw name="Camera Stop" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.258727" elapsed="0.000512"/>
+</kw>
+<kw name="Check is camera stopped" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.259239" level="INFO">${is_camera_stopped} = False</msg>
+<var>${is_camera_stopped}</var>
+<status status="PASS" start="2024-10-20T17:59:47.259239" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${is_camera_stopped}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.259239" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.259239" elapsed="0.000000"/>
+</kw>
+<doc>Test and validate width and height maximum values</doc>
+<status status="PASS" start="2024-10-20T17:59:47.253003" elapsed="0.006236"/>
+</test>
+<test id="s1-t4" name="Test width and height minimum values" line="105">
+<kw name="Create Camera" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.260247" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.260247" level="INFO">${SETFRAMERATE} = 20.0</msg>
+<var>${SETFRAMERATE}</var>
+<arg>20.0</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.260247" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Framerate" owner="CameraLibrary">
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.261247" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.261247" level="INFO">${SETEXPOSURETIME} = 19.2</msg>
+<var>${SETEXPOSURETIME}</var>
+<arg>19.2</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.261247" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.261247" level="INFO">${setexptime} = True</msg>
+<var>${setexptime}</var>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.261247" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.261247" level="INFO">${SETWIDTH} = 100.0</msg>
+<var>${SETWIDTH}</var>
+<arg>100</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.261247" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Width" owner="CameraLibrary">
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.261247" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.261247" level="INFO">${SETHEIGHT} = 100.0</msg>
+<var>${SETHEIGHT}</var>
+<arg>100</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.261247" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Height" owner="CameraLibrary">
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.262247" elapsed="0.000000"/>
+</kw>
+<kw name="Camera Start" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.262247" elapsed="0.000449"/>
+</kw>
+<kw name="Check is camera started" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.262696" level="INFO">${is_camera_started} = True</msg>
+<var>${is_camera_started}</var>
+<status status="PASS" start="2024-10-20T17:59:47.262696" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_camera_started}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.262696" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.262696" elapsed="0.000000"/>
+</kw>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.263199" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A0892B0&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.263199" elapsed="0.000000"/>
+</kw>
+<kw name="Check framerate" owner="BasicFunctionality">
+<kw name="Get Camera Framerate" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.263808" level="INFO">${returned_framerate} = 20.0</msg>
+<var>${returned_framerate}</var>
+<status status="PASS" start="2024-10-20T17:59:47.263298" elapsed="0.000510"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETFRAMERATE}</arg>
+<arg>${returned_framerate}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.263808" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED FRAMERATE: ${returned_framerate}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.263808" elapsed="0.000752"/>
+</kw>
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.263298" elapsed="0.001262"/>
+</kw>
+<kw name="Check exposuretime" owner="BasicFunctionality">
+<kw name="Get Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.264560" level="INFO">${returned_exptime} = 19.2</msg>
+<var>${returned_exptime}</var>
+<status status="PASS" start="2024-10-20T17:59:47.264560" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETEXPOSURETIME}</arg>
+<arg>${returned_exptime}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.264560" elapsed="0.000513"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED EXPTIME: ${returned_exptime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.265073" elapsed="0.000160"/>
+</kw>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.264560" elapsed="0.000673"/>
+</kw>
+<kw name="Check height" owner="BasicFunctionality">
+<kw name="Get Camera Height" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.265233" level="INFO">${returned_height} = 100</msg>
+<var>${returned_height}</var>
+<status status="PASS" start="2024-10-20T17:59:47.265233" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.265233" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETHEIGHT}</arg>
+<arg>${returned_height}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.265233" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED HEIGHT: ${returned_height}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.265743" elapsed="0.000107"/>
+</kw>
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.265233" elapsed="0.000617"/>
+</kw>
+<kw name="Check width" owner="BasicFunctionality">
+<kw name="Get Camera Width" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.265850" level="INFO">${returned_width} = 100</msg>
+<var>${returned_width}</var>
+<status status="PASS" start="2024-10-20T17:59:47.265850" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.265850" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${SETWIDTH}</arg>
+<arg>${returned_width}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.265850" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED WIDTH: ${returned_width}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.266360" elapsed="0.000088"/>
+</kw>
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.265850" elapsed="0.000598"/>
+</kw>
+<kw name="Camera Stop" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.266448" elapsed="0.000510"/>
+</kw>
+<kw name="Check is camera stopped" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.266958" level="INFO">${is_camera_stopped} = False</msg>
+<var>${is_camera_stopped}</var>
+<status status="PASS" start="2024-10-20T17:59:47.266958" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${is_camera_stopped}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.266958" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.266958" elapsed="0.000000"/>
+</kw>
+<doc>Test and validate width and height with minimum values</doc>
+<status status="PASS" start="2024-10-20T17:59:47.260247" elapsed="0.006711"/>
+</test>
+<test id="s1-t5" name="Test width and height with invalid values" line="136">
+<kw name="Create Camera" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.267965" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.267965" level="INFO">${SETFRAMERATE} = 20.0</msg>
+<var>${SETFRAMERATE}</var>
+<arg>20.0</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.267965" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Framerate" owner="CameraLibrary">
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.267965" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.267965" level="INFO">${SETEXPOSURETIME} = 19.2</msg>
+<var>${SETEXPOSURETIME}</var>
+<arg>19.2</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.267965" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.267965" level="INFO">${setexptime} = True</msg>
+<var>${setexptime}</var>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.267965" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.268998" level="INFO">${SETWIDTH} = 90.0</msg>
+<var>${SETWIDTH}</var>
+<arg>90</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.268998" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Width" owner="CameraLibrary">
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.268998" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.268998" level="INFO">${SETHEIGHT} = 1001.0</msg>
+<var>${SETHEIGHT}</var>
+<arg>1001</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.268998" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Height" owner="CameraLibrary">
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.268998" elapsed="0.000000"/>
+</kw>
+<kw name="Camera Start" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.268998" elapsed="0.000000"/>
+</kw>
+<kw name="Check is camera started" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.269999" level="INFO">${is_camera_started} = True</msg>
+<var>${is_camera_started}</var>
+<status status="PASS" start="2024-10-20T17:59:47.269999" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_camera_started}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.269999" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.268998" elapsed="0.001001"/>
+</kw>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.270329" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A07A990&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.270329" elapsed="0.000000"/>
+</kw>
+<kw name="Check framerate" owner="BasicFunctionality">
+<kw name="Get Camera Framerate" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.270329" level="INFO">${returned_framerate} = 20.0</msg>
+<var>${returned_framerate}</var>
+<status status="PASS" start="2024-10-20T17:59:47.270329" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETFRAMERATE}</arg>
+<arg>${returned_framerate}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.270329" elapsed="0.000513"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED FRAMERATE: ${returned_framerate}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.270842" elapsed="0.000150"/>
+</kw>
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.270329" elapsed="0.000663"/>
+</kw>
+<kw name="Check exposuretime" owner="BasicFunctionality">
+<kw name="Get Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.271495" level="INFO">${returned_exptime} = 19.2</msg>
+<var>${returned_exptime}</var>
+<status status="PASS" start="2024-10-20T17:59:47.271495" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${SETEXPOSURETIME}</arg>
+<arg>${returned_exptime}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.271495" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED EXPTIME: ${returned_exptime}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.271495" elapsed="0.000492"/>
+</kw>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.270992" elapsed="0.000995"/>
+</kw>
+<kw name="Check invalid height" owner="BasicFunctionality">
+<kw name="Get Camera Height" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.271987" level="INFO">${returned_height} = 512</msg>
+<var>${returned_height}</var>
+<status status="PASS" start="2024-10-20T17:59:47.271987" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.272500" level="INFO">${default_height} = 512.0</msg>
+<var>${default_height}</var>
+<arg>512</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.272500" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.272500" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${default_height}</arg>
+<arg>${returned_height}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.272500" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED HEIGHT: ${returned_height}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.272500" elapsed="0.000367"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.271987" elapsed="0.000880"/>
+</kw>
+<kw name="Check invalid width" owner="BasicFunctionality">
+<kw name="Get Camera Width" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.272867" level="INFO">${returned_width} = 640</msg>
+<var>${returned_width}</var>
+<status status="PASS" start="2024-10-20T17:59:47.272867" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.272867" level="INFO">${default_width} = 640.0</msg>
+<var>${default_width}</var>
+<arg>640</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.272867" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.273378" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${default_width}</arg>
+<arg>${returned_width}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.273378" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>RETURNED WIDTH: ${returned_width}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.273378" elapsed="0.000214"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.272867" elapsed="0.000725"/>
+</kw>
+<kw name="Camera Stop" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.273592" elapsed="0.000513"/>
+</kw>
+<kw name="Check is camera stopped" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.274105" level="INFO">${is_camera_stopped} = False</msg>
+<var>${is_camera_stopped}</var>
+<status status="PASS" start="2024-10-20T17:59:47.274105" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${is_camera_stopped}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.274105" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.274105" elapsed="0.000000"/>
+</kw>
+<doc>Camera returns default values</doc>
+<status status="PASS" start="2024-10-20T17:59:47.266958" elapsed="0.007147"/>
+</test>
+<test id="s1-t6" name="Test to capture several frames" line="167">
+<kw name="Create Camera" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.275113" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.275113" level="INFO">${SETFRAMERATE} = 20.0</msg>
+<var>${SETFRAMERATE}</var>
+<arg>20.0</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.275113" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Framerate" owner="CameraLibrary">
+<arg>${SETFRAMERATE}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.275113" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.275113" level="INFO">${SETEXPOSURETIME} = 19.2</msg>
+<var>${SETEXPOSURETIME}</var>
+<arg>19.2</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.275113" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Exposuretime" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.275113" level="INFO">${setexptime} = True</msg>
+<var>${setexptime}</var>
+<arg>${SETEXPOSURETIME}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.275113" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.276111" level="INFO">${SETWIDTH} = 100.0</msg>
+<var>${SETWIDTH}</var>
+<arg>100</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.276111" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Width" owner="CameraLibrary">
+<arg>${SETWIDTH}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.276111" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2024-10-20T17:59:47.276111" level="INFO">${SETHEIGHT} = 100.0</msg>
+<var>${SETHEIGHT}</var>
+<arg>100</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.276111" elapsed="0.000000"/>
+</kw>
+<kw name="Set Camera Height" owner="CameraLibrary">
+<arg>${SETHEIGHT}</arg>
+<status status="PASS" start="2024-10-20T17:59:47.276111" elapsed="0.000000"/>
+</kw>
+<kw name="Camera Start" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.276111" elapsed="0.000788"/>
+</kw>
+<kw name="Check is camera started" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.276899" level="INFO">${is_camera_started} = True</msg>
+<var>${is_camera_started}</var>
+<status status="PASS" start="2024-10-20T17:59:47.276899" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${is_camera_started}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.276899" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.276899" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.277402" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A089D00&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.277402" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Captured Frame: ${index}: ${frame}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.277402" elapsed="0.000440"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-10-20T17:59:47.277402" elapsed="0.000440"/>
+</iter>
+<iter>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.326697" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A08A360&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.277842" elapsed="0.048855"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Captured Frame: ${index}: ${frame}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.326697" elapsed="0.000686"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-10-20T17:59:47.277842" elapsed="0.049541"/>
+</iter>
+<iter>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.377827" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A08B920&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.327897" elapsed="0.049930"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Captured Frame: ${index}: ${frame}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.377827" elapsed="0.001281"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2024-10-20T17:59:47.327383" elapsed="0.051725"/>
+</iter>
+<iter>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.428325" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A07A870&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.379622" elapsed="0.048703"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Captured Frame: ${index}: ${frame}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.428325" elapsed="0.000815"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2024-10-20T17:59:47.379108" elapsed="0.050032"/>
+</iter>
+<iter>
+<kw name="Get Camera Frame" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.478564" level="INFO">${frame} = &lt;camera.Frame object at 0x000001ED8A07AD20&gt;</msg>
+<var>${frame}</var>
+<status status="PASS" start="2024-10-20T17:59:47.429653" elapsed="0.048911"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Captured Frame: ${index}: ${frame}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.478564" elapsed="0.000624"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2024-10-20T17:59:47.429140" elapsed="0.050048"/>
+</iter>
+<var>${index}</var>
+<value>${NUM_FRAMES}</value>
+<status status="PASS" start="2024-10-20T17:59:47.277402" elapsed="0.201786"/>
+</for>
+<kw name="Camera Stop" owner="CameraLibrary">
+<status status="PASS" start="2024-10-20T17:59:47.479188" elapsed="0.000509"/>
+</kw>
+<kw name="Check is camera stopped" owner="BasicFunctionality">
+<kw name="Is Camera Started" owner="CameraLibrary">
+<msg time="2024-10-20T17:59:47.479697" level="INFO">${is_camera_stopped} = False</msg>
+<var>${is_camera_stopped}</var>
+<status status="PASS" start="2024-10-20T17:59:47.479697" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${is_camera_stopped}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2024-10-20T17:59:47.479697" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-20T17:59:47.479697" elapsed="0.000000"/>
+</kw>
+<doc>Capture several frames in a loop</doc>
+<status status="PASS" start="2024-10-20T17:59:47.275113" elapsed="0.204584"/>
+</test>
+<doc>This suite is based on testing the Camera functionality</doc>
+<status status="PASS" start="2024-10-20T17:59:47.164213" elapsed="0.316491"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="CameraTests">CameraTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
